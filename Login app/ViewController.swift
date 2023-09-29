@@ -21,6 +21,15 @@ class ViewController: UIViewController {
         setSubTitle(subText)
         
         let scroll = setSegmented()
+        
+        let gestureR = UISwipeGestureRecognizer(target: self , action: #selector(swipeHandler))
+        gestureR.direction = .right
+        self.view!.addGestureRecognizer(gestureR)
+        
+        let gestureL = UISwipeGestureRecognizer(target: self , action: #selector(swipeHandler))
+        gestureL.direction = .left
+        self.view!.addGestureRecognizer(gestureL)
+        
 //        setupButton()
     }
     
@@ -95,6 +104,14 @@ class ViewController: UIViewController {
         ])
         
         return scroll
+    }
+    
+    @objc func swipeHandler(_ gestureRecognizer : UISwipeGestureRecognizer) {
+        if gestureRecognizer.direction == UISwipeGestureRecognizer.Direction.left {
+            print("passou a pagina")
+        } else if gestureRecognizer.direction == UISwipeGestureRecognizer.Direction.right {
+            print("voltou a pagina")
+        }
     }
     
     func setupButton() {
