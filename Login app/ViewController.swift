@@ -19,6 +19,8 @@ class ViewController: UIViewController {
         setImage(painelImage)
         setMainTitle(mainText)
         setSubTitle(subText)
+        
+        let scroll = setSegmented()
 //        setupButton()
     }
     
@@ -73,6 +75,26 @@ class ViewController: UIViewController {
             subTitle.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 50),
             subTitle.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -50),
         ])
+    }
+    
+    func setSegmented() -> UISegmentedControl {
+        let segmentedItems = ["", "", ""]
+        let scroll = UISegmentedControl(items: segmentedItems)
+        scroll.backgroundColor = .gray
+        scroll.selectedSegmentTintColor = .blue
+        scroll.selectedSegmentIndex = 0
+        
+        scroll.translatesAutoresizingMaskIntoConstraints = false
+        
+        view.addSubview(scroll)
+        
+        NSLayoutConstraint.activate([
+            scroll.topAnchor.constraint(equalTo: subText.bottomAnchor, constant: 180),
+            scroll.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            scroll.heightAnchor.constraint(equalToConstant: 10)
+        ])
+        
+        return scroll
     }
     
     func setupButton() {
