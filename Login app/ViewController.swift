@@ -10,11 +10,13 @@ import UIKit
 class ViewController: UIViewController {
     let nextButton = UIButton()
     let painelImage = UIImageView()
+    let mainText = UILabel()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
         setImage(painelImage)
+        setMainTitle(mainText)
 //        setupButton()
     }
     
@@ -31,6 +33,25 @@ class ViewController: UIViewController {
             painelImage.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -20),
             painelImage.centerXAnchor.constraint(equalTo: view.centerXAnchor),
         ])
+    }
+    
+    func setMainTitle(_ mainText: UILabel) {
+        mainText.text = "Easy to make transact, with Jumot"
+        mainText.font = .systemFont(ofSize: 21, weight: .bold)
+        mainText.textAlignment = .center
+        mainText.textColor = .black
+        mainText.numberOfLines = 0
+        
+        mainText.translatesAutoresizingMaskIntoConstraints = false
+        
+        view.addSubview(mainText)
+        
+        NSLayoutConstraint.activate([
+            mainText.topAnchor.constraint(equalTo: painelImage.bottomAnchor, constant: 50),
+            mainText.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 50),
+            mainText.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -50),
+        ])
+        
     }
     
     func setupButton() {
