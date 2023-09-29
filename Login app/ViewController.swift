@@ -12,6 +12,7 @@ class ViewController: UIViewController {
     let painelImage = UIImageView()
     let mainText = UILabel()
     let subText = UILabel()
+    let scroll = UISegmentedControl(items: ["", "", ""])
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,8 +20,9 @@ class ViewController: UIViewController {
         setImage(painelImage)
         setMainTitle(mainText)
         setSubTitle(subText)
+        setSegmented(scroll)
         
-        let scroll = setSegmented()
+        //let scroll = setSegmented()
         
         let gestureR = UISwipeGestureRecognizer(target: self , action: #selector(swipeHandler))
         gestureR.direction = .right
@@ -86,14 +88,14 @@ class ViewController: UIViewController {
         ])
     }
     
-    func setSegmented() -> UISegmentedControl {
-        let segmentedItems = ["", "", ""]
-        let scroll = UISegmentedControl(items: segmentedItems)
+    func setSegmented(_ scroll: UISegmentedControl) {
         scroll.backgroundColor = .gray
         scroll.selectedSegmentTintColor = .blue
         scroll.selectedSegmentIndex = 0
         
         scroll.translatesAutoresizingMaskIntoConstraints = false
+        
+        scroll.addTarget(self, action: #selector(changePainel), for: .valueChanged)
         
         view.addSubview(scroll)
         
@@ -102,17 +104,8 @@ class ViewController: UIViewController {
             scroll.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             scroll.heightAnchor.constraint(equalToConstant: 10)
         ])
-        
-        return scroll
     }
     
-    @objc func swipeHandler(_ gestureRecognizer : UISwipeGestureRecognizer) {
-        if gestureRecognizer.direction == UISwipeGestureRecognizer.Direction.left {
-            print("passou a pagina")
-        } else if gestureRecognizer.direction == UISwipeGestureRecognizer.Direction.right {
-            print("voltou a pagina")
-        }
-    }
     
     func setupButton() {
         view.addSubview(nextButton)
@@ -127,6 +120,36 @@ class ViewController: UIViewController {
         ])
     }
     
+    @objc func swipeHandler(_ gestureRecognizer : UISwipeGestureRecognizer) {
+        if gestureRecognizer.direction == UISwipeGestureRecognizer.Direction.left {
+            scroll.selectedSegmentIndex += 1
+            changePainel(scroll)
+        } else if gestureRecognizer.direction == UISwipeGestureRecognizer.Direction.right {
+            if scroll.selectedSegmentIndex > 0 {
+                scroll.selectedSegmentIndex -= 1
+                changePainel(scroll)
+            }
+        }
+    }
+    
+    @objc func changePainel(_ sender: UISegmentedControl) {
+        switch sender.selectedSegmentIndex {
+        case 0:
+            painelImage.image = UIImage(resource: .painel1)
+            subText.text = "The buying and selling business reaches all regions in Indonesia"
+        case 1:
+            painelImage.image = UIImage(resource: .painel2)
+            subText.text = "Buying and selling can be done by cod to get check the items we are going to buy"
+        case 2:
+            painelImage.image = UIImage(resource: .painel3)
+            subText.text = "Buy a vehicle according to your interests and with best negotiated price"
+        default:
+            painelImage.image = UIImage(resource: .painel1)
+            subText.text = "The buying and selling business reaches all regions in Indonesia"
+        }
+    
+    }
+
     @objc func goToNextScreen() {
         let nextScreen = SecondScreen()
         navigationController?.pushViewController(nextScreen, animated: true)
