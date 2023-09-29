@@ -11,12 +11,14 @@ class ViewController: UIViewController {
     let nextButton = UIButton()
     let painelImage = UIImageView()
     let mainText = UILabel()
+    let subText = UILabel()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
         setImage(painelImage)
         setMainTitle(mainText)
+        setSubTitle(subText)
 //        setupButton()
     }
     
@@ -52,6 +54,25 @@ class ViewController: UIViewController {
             mainText.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -50),
         ])
         
+    }
+    
+    func setSubTitle(_ subTitle: UILabel) {
+        let text = "The buying and selling business reaches all regions in Indonesia"
+        subTitle.text = text
+        subTitle.font = .systemFont(ofSize: 15, weight: .light)
+        subTitle.textAlignment = .center
+        subTitle.textColor = .black
+        subTitle.numberOfLines = 0
+        
+        subTitle.translatesAutoresizingMaskIntoConstraints = false
+        
+        view.addSubview(subTitle)
+        
+        NSLayoutConstraint.activate([
+            subTitle.topAnchor.constraint(equalTo: mainText.bottomAnchor, constant: 20),
+            subTitle.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 50),
+            subTitle.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -50),
+        ])
     }
     
     func setupButton() {
