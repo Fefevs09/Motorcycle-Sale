@@ -191,8 +191,8 @@ class ViewController: UIViewController {
     
     }
 
-    @objc func goToNextScreen() {
-        let nextScreen = SecondScreen()
+    @objc func goToLoginScreen() {
+        let nextScreen = LoginViewController()
         navigationController?.pushViewController(nextScreen, animated: true)
     }
 
