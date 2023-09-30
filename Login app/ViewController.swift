@@ -110,6 +110,7 @@ class ViewController: UIViewController {
         }
         
         buttonLogin.addTarget(self, action: #selector(goToLoginScreen), for: .touchUpInside)
+        buttonSingIn.addTarget(self, action: #selector(goToSingInScreen), for: .touchUpInside)
         
         NSLayoutConstraint.activate([
             buttonLogin.topAnchor.constraint(equalTo: subText.bottomAnchor, constant: 10),
