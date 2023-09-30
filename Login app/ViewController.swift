@@ -182,6 +182,11 @@ class ViewController: UIViewController {
         let nextScreen = LoginViewController()
         navigationController?.pushViewController(nextScreen, animated: true)
     }
+    
+    @objc func goToSingInScreen() {
+        let nextScreen = SingInViewController()
+        navigationController?.pushViewController(nextScreen, animated: true)
+    }
 
 }
 
