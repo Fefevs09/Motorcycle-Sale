@@ -127,8 +127,8 @@ class ViewController: UIViewController {
     }
     
     func setSegmented(_ scroll: UISegmentedControl) {
-        scroll.backgroundColor = .gray
-        scroll.selectedSegmentTintColor = .blue
+        scroll.backgroundColor = .backgroundSegmented
+        scroll.selectedSegmentTintColor = .main
         scroll.selectedSegmentIndex = 0
         
         scroll.translatesAutoresizingMaskIntoConstraints = false
