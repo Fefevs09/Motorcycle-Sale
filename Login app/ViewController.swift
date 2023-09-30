@@ -99,9 +99,10 @@ class ViewController: UIViewController {
         for bt in buttons {
             bt.isHidden = Hidden
             buttonLogin.configuration = .filled()
+            buttonLogin.configuration?.baseBackgroundColor = .main
             buttonSingIn.configuration = .plain()
             buttonSingIn.layer.borderWidth = 2
-            buttonSingIn.layer.borderColor = UIColor.blue.cgColor
+            buttonSingIn.layer.borderColor = UIColor.main.cgColor
             buttonSingIn.layer.cornerRadius = 10
             bt.configuration?.cornerStyle = .medium
             buttonLogin.configuration?.title = "Login"
