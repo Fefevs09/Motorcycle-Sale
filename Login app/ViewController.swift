@@ -9,9 +9,15 @@ import UIKit
 
 class ViewController: UIViewController {
     let nextButton = UIButton()
+    
     let painelImage = UIImageView()
+    
     let mainText = UILabel()
     let subText = UILabel()
+    
+    let buttonSingIn = UIButton()
+    let buttonLogin = UIButton()
+    
     let scroll = UISegmentedControl(items: ["", "", ""])
 
     override func viewDidLoad() {
@@ -86,6 +92,37 @@ class ViewController: UIViewController {
             subTitle.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 50),
             subTitle.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -50),
         ])
+    }
+    
+    func setButtons(_ buttonSingIn: UIButton, _ buttonLogin: UIButton, _ Hidden: Bool) {
+        let buttons = [buttonLogin, buttonSingIn]
+        for bt in buttons {
+            bt.isHidden = Hidden
+            buttonLogin.configuration = .filled()
+            buttonSingIn.configuration = .plain()
+            buttonSingIn.layer.borderWidth = 2
+            buttonSingIn.layer.borderColor = UIColor.blue.cgColor
+            buttonSingIn.layer.cornerRadius = 10
+            bt.configuration?.cornerStyle = .medium
+            buttonLogin.configuration?.title = "Login"
+            buttonSingIn.configuration?.title = "Sing In"
+            bt.translatesAutoresizingMaskIntoConstraints = false
+            view.addSubview(bt)
+        }
+        
+        NSLayoutConstraint.activate([
+            buttonLogin.topAnchor.constraint(equalTo: subText.bottomAnchor, constant: 10),
+            buttonLogin.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            buttonLogin.widthAnchor.constraint(equalToConstant: 354),
+            buttonLogin.heightAnchor.constraint(equalToConstant: 52),
+            
+            buttonSingIn.topAnchor.constraint(equalTo: buttonLogin.bottomAnchor, constant: 31),
+            buttonSingIn.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            buttonSingIn.widthAnchor.constraint(equalToConstant: 354),
+            buttonSingIn.heightAnchor.constraint(equalToConstant: 52),
+        ])
+        
+        
     }
     
     func setSegmented(_ scroll: UISegmentedControl) {
