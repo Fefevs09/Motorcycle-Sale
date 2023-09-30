@@ -109,6 +109,8 @@ class ViewController: UIViewController {
             view.addSubview(bt)
         }
         
+        buttonLogin.addTarget(self, action: #selector(goToLoginScreen), for: .touchUpInside)
+        
         NSLayoutConstraint.activate([
             buttonLogin.topAnchor.constraint(equalTo: subText.bottomAnchor, constant: 10),
             buttonLogin.centerXAnchor.constraint(equalTo: view.centerXAnchor),
