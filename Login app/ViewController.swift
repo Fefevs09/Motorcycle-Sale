@@ -174,12 +174,15 @@ class ViewController: UIViewController {
         case 0:
             painelImage.image = UIImage(resource: .painel1)
             subText.text = "The buying and selling business reaches all regions in Indonesia"
+            setButtons(buttonSingIn, buttonLogin, true)
         case 1:
             painelImage.image = UIImage(resource: .painel2)
             subText.text = "Buying and selling can be done by cod to get check the items we are going to buy"
+            setButtons(buttonSingIn, buttonLogin, true)
         case 2:
             painelImage.image = UIImage(resource: .painel3)
             subText.text = "Buy a vehicle according to your interests and with best negotiated price"
+            setButtons(buttonSingIn, buttonLogin, false)
         default:
             painelImage.image = UIImage(resource: .painel1)
             subText.text = "The buying and selling business reaches all regions in Indonesia"
