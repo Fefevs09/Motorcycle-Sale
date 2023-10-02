@@ -8,7 +8,11 @@
 import UIKit
 
 class LoginViewController: UIViewController {
-
+    let painelImage = UIImageView()
+    let emailTextField = UITextField()
+    let passTextField = UITextField()
+    let buttonUnhide = UIButton()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
