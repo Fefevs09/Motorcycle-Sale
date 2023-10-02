@@ -60,4 +60,48 @@ class LoginViewController: UIViewController {
         ])
     }
 
+    func setupPassTF(_ textField: UITextField) {
+        textField.placeholder = "Password"
+        
+        textField.leftView = UIView.init(frame: CGRect(x: 0, y: 0, width: 20, height: 0))
+        textField.leftViewMode = .always
+        
+        textField.backgroundColor = .white
+        textField.layer.borderWidth = 2
+        textField.layer.borderColor = UIColor.backgroundSegmented.cgColor
+        textField.layer.cornerRadius = 10
+        
+        textField.isSecureTextEntry = true
+        
+        textField.translatesAutoresizingMaskIntoConstraints = false
+        
+        view.addSubview(textField)
+        
+        NSLayoutConstraint.activate([
+            textField.topAnchor.constraint(equalTo: emailTextField.bottomAnchor, constant: 16),
+            textField.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            textField.widthAnchor.constraint(equalToConstant: 350),
+            textField.heightAnchor.constraint(equalToConstant: 52),
+            
+        ])
+        
+    }
+    
+    func setupButtonUnhidePass(_ buttonUnhide: UIButton) {
+        buttonUnhide.configuration = .plain()
+        buttonUnhide.setImage(UIImage(systemName: "eye.slash.fill"), for: .normal)
+        buttonUnhide.tintColor = .backgroundSegmented
+        
+        
+        view.addSubview(buttonUnhide)
+        buttonUnhide.translatesAutoresizingMaskIntoConstraints = false
+        
+        NSLayoutConstraint.activate([
+            //buttonUnhide.rightAnchor.constraint(equalTo: passTextField.rightAnchor, constant: 30),
+            buttonUnhide.centerYAnchor.constraint(equalTo: passTextField.centerYAnchor),
+            buttonUnhide.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -40),
+            buttonUnhide.widthAnchor.constraint(equalToConstant: 30),
+            buttonUnhide.heightAnchor.constraint(equalToConstant: 30)
+        ])
+    }
 }
