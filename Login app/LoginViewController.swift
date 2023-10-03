@@ -12,6 +12,7 @@ class LoginViewController: UIViewController {
     let emailTextField = UITextField()
     let passTextField = UITextField()
     let buttonUnhide = UIButton()
+    let buttonForgetPass = UIButton()
     
     
     override func viewDidLoad() {
@@ -22,6 +23,7 @@ class LoginViewController: UIViewController {
         setupEmailTextFild(emailTextField)
         setupPassTF(passTextField)
         setupButtonUnhidePass(buttonUnhide)
+        setupButtonForgetPass(buttonForgetPass)
     }
     
     
@@ -109,6 +111,21 @@ class LoginViewController: UIViewController {
         ])
     }
     
+    func setupButtonForgetPass(_ buttonForgetPass: UIButton) {
+        buttonForgetPass.configuration = .plain()
+        
+        let titleButton = "Forget password?"
+        buttonForgetPass.configuration?.title = titleButton
+        
+        buttonForgetPass.translatesAutoresizingMaskIntoConstraints = false
+        
+        view.addSubview(buttonForgetPass)
+        
+        NSLayoutConstraint.activate([
+            buttonForgetPass.topAnchor.constraint(equalTo: passTextField.bottomAnchor, constant: 5),
+            buttonForgetPass.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -10)
+        ])
+    }
     
     @objc func switchHideButton(_ sender: UIButton) {
         passTextField.isSecureTextEntry.toggle()
