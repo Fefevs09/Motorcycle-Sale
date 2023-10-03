@@ -92,6 +92,7 @@ class LoginViewController: UIViewController {
     
     func setupButtonUnhidePass(_ buttonUnhide: UIButton) {
         buttonUnhide.configuration = .plain()
+        buttonUnhide.configuration?.buttonSize = .small
         
         buttonUnhide.setImage(UIImage(systemName: "eye"), for: .normal)
         
