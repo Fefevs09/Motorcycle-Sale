@@ -195,6 +195,22 @@ class LoginViewController: UIViewController {
         ])
     }
     
+    func alertIncorrectEP() {
+        let alert = UIAlertController(title: "Incorret information", message: "Email or password is incorrect. Please verfif!", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Default action"), style: .default, handler: { _ in
+        NSLog("The \"OK\" alert occured.")
+        }))
+        self.present(alert, animated: true, completion: nil)
+    }
+    
+    func alertCorrectEP() {
+        let alert = UIAlertController(title: "Thanks for login", message: "Now you enter in your account", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Default action"), style: .default, handler: { _ in
+        NSLog("The \"OK\" alert occured.")
+        }))
+        self.present(alert, animated: true, completion: nil)
+    }
+    
     @objc func switchHideButton(_ sender: UIButton) {
         passTextField.isSecureTextEntry.toggle()
         if passTextField.isSecureTextEntry {
