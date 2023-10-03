@@ -53,7 +53,7 @@ class LoginViewController: UIViewController {
         view.addSubview(textField)
         
         NSLayoutConstraint.activate([
-            textField.topAnchor.constraint(equalTo: painelImage.bottomAnchor, constant: 50),
+            textField.topAnchor.constraint(equalTo: painelImage.bottomAnchor, constant: 30),
             textField.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             textField.widthAnchor.constraint(equalToConstant: 350),
             textField.heightAnchor.constraint(equalToConstant: 52),
