@@ -13,6 +13,7 @@ class LoginViewController: UIViewController {
     let passTextField = UITextField()
     let buttonUnhide = UIButton()
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
@@ -59,7 +60,7 @@ class LoginViewController: UIViewController {
             
         ])
     }
-
+    
     func setupPassTF(_ textField: UITextField) {
         textField.placeholder = "Password"
         
@@ -89,9 +90,12 @@ class LoginViewController: UIViewController {
     
     func setupButtonUnhidePass(_ buttonUnhide: UIButton) {
         buttonUnhide.configuration = .plain()
-        buttonUnhide.setImage(UIImage(systemName: "eye.slash.fill"), for: .normal)
-        buttonUnhide.tintColor = .backgroundSegmented
         
+        buttonUnhide.setImage(UIImage(systemName: "eye"), for: .normal)
+        
+        buttonUnhide.tintColor = UIColor.backgroundSegmented
+        
+        buttonUnhide.addTarget(self, action: #selector(switchHideButton), for: .touchUpInside)
         
         view.addSubview(buttonUnhide)
         buttonUnhide.translatesAutoresizingMaskIntoConstraints = false
@@ -100,8 +104,8 @@ class LoginViewController: UIViewController {
             //buttonUnhide.rightAnchor.constraint(equalTo: passTextField.rightAnchor, constant: 30),
             buttonUnhide.centerYAnchor.constraint(equalTo: passTextField.centerYAnchor),
             buttonUnhide.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -40),
-            buttonUnhide.widthAnchor.constraint(equalToConstant: 30),
-            buttonUnhide.heightAnchor.constraint(equalToConstant: 30)
+            buttonUnhide.widthAnchor.constraint(equalToConstant: 10),
+            buttonUnhide.heightAnchor.constraint(equalToConstant: 10)
         ])
     }
 }
