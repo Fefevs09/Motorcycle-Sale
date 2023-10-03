@@ -146,6 +146,7 @@ class LoginViewController: UIViewController {
         buttonLogin.configuration?.baseBackgroundColor = .main
         buttonLogin.configuration?.cornerStyle = .medium
         buttonLogin.configuration?.title = "Login"
+        buttonLogin.addTarget(self, action: #selector(loginApp), for: .touchUpInside)
         buttonLogin.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(buttonLogin)
         
@@ -228,5 +229,18 @@ class LoginViewController: UIViewController {
         let nextScreen = SingInViewController()
         
         navigationController?.pushViewController(nextScreen, animated: true)
+    }
+    
+    @objc func loginApp(_ sender: UIButton) {
+        var user = User(email: "fulano@gmail.com", password: "ciclano123")
+        
+        var emailUser = emailTextField.text
+        var passwordUser = passTextField.text
+        
+        if user.email != emailUser && user.password != passwordUser {
+            alertIncorrectEP()
+        } else {
+            alertCorrectEP()
+        }
     }
 }
