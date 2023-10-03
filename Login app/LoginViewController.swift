@@ -14,6 +14,7 @@ class LoginViewController: UIViewController {
     let buttonUnhide = UIButton()
     let buttonForgetPass = UIButton()
     let buttonLogin = UIButton()
+    let registerNow = UILabel()
     
     
     override func viewDidLoad() {
@@ -26,6 +27,7 @@ class LoginViewController: UIViewController {
         setupButtonUnhidePass(buttonUnhide)
         setupButtonForgetPass(buttonForgetPass)
         setupButtonLogin(buttonLogin)
+        setupRegisterNow(registerNow)
     }
     
     
@@ -149,6 +151,42 @@ class LoginViewController: UIViewController {
         ])
         
         
+    }
+    
+    func setupRegisterNow(_ registerNow: UILabel) {
+        let buttonRegisteNow =  UIButton()
+        
+        //registerNow.text = "Don't have an account yet? Register now"
+        registerNow.text = "Don't have an account yet? "
+        registerNow.font = .systemFont(ofSize: 14, weight: .light)
+        registerNow.textAlignment = .center
+        registerNow.textColor = .black
+        registerNow.numberOfLines = 0
+        
+        registerNow.translatesAutoresizingMaskIntoConstraints = false
+        
+        view.addSubview(registerNow)
+        
+        NSLayoutConstraint.activate([
+            registerNow.topAnchor.constraint(equalTo: buttonLogin.bottomAnchor, constant: 60),
+            registerNow.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 30)
+        ])
+        
+        buttonRegisteNow.configuration = .plain()
+        buttonRegisteNow.configuration?.title = "Register Now"
+        buttonRegisteNow.tintColor = .main
+        
+        buttonRegisteNow.addTarget(self, action: #selector(goToSingUp), for: .touchUpInside)
+        buttonRegisteNow.translatesAutoresizingMaskIntoConstraints = false
+        
+        view.addSubview(buttonRegisteNow)
+        
+        
+        NSLayoutConstraint.activate([
+            buttonRegisteNow.topAnchor.constraint(equalTo: buttonLogin.bottomAnchor, constant: 60),
+            buttonRegisteNow.centerYAnchor.constraint(equalTo: registerNow.centerYAnchor),
+            buttonRegisteNow.leftAnchor.constraint(equalTo: registerNow.rightAnchor, constant: -10),
+        ])
     }
     
     @objc func switchHideButton(_ sender: UIButton) {
