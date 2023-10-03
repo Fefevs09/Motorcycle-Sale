@@ -201,4 +201,10 @@ class LoginViewController: UIViewController {
             }
         }
     }
+    
+    @objc func goToSingUp(_ sender: UIButton) {
+        let nextScreen = SingInViewController()
+        
+        navigationController?.pushViewController(nextScreen, animated: true)
+    }
 }
