@@ -7,6 +7,12 @@
 
 import UIKit
 
+struct User {
+    let email: String
+    let password: String
+    
+}
+
 class LoginViewController: UIViewController {
     let painelImage = UIImageView()
     let emailTextField = UITextField()
