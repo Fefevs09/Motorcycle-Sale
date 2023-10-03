@@ -168,8 +168,8 @@ class LoginViewController: UIViewController {
         view.addSubview(registerNow)
         
         NSLayoutConstraint.activate([
-            registerNow.topAnchor.constraint(equalTo: buttonLogin.bottomAnchor, constant: 60),
-            registerNow.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 30)
+            registerNow.topAnchor.constraint(equalTo: buttonLogin.bottomAnchor, constant: 70),
+            registerNow.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 50)
         ])
         
         buttonRegisteNow.configuration = .plain()
