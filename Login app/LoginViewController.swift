@@ -13,6 +13,7 @@ class LoginViewController: UIViewController {
     let passTextField = UITextField()
     let buttonUnhide = UIButton()
     let buttonForgetPass = UIButton()
+    let buttonLogin = UIButton()
     
     
     override func viewDidLoad() {
@@ -24,6 +25,7 @@ class LoginViewController: UIViewController {
         setupPassTF(passTextField)
         setupButtonUnhidePass(buttonUnhide)
         setupButtonForgetPass(buttonForgetPass)
+        setupButtonLogin(buttonLogin)
     }
     
     
@@ -128,6 +130,25 @@ class LoginViewController: UIViewController {
             buttonForgetPass.topAnchor.constraint(equalTo: passTextField.bottomAnchor, constant: 5),
             buttonForgetPass.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -10)
         ])
+    }
+    
+    func setupButtonLogin(_ buttonLogin: UIButton) {
+        
+        buttonLogin.configuration = .filled()
+        buttonLogin.configuration?.baseBackgroundColor = .main
+        buttonLogin.configuration?.cornerStyle = .medium
+        buttonLogin.configuration?.title = "Login"
+        buttonLogin.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(buttonLogin)
+        
+        NSLayoutConstraint.activate([
+            buttonLogin.topAnchor.constraint(equalTo: buttonForgetPass.bottomAnchor, constant: 24),
+            buttonLogin.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            buttonLogin.widthAnchor.constraint(equalToConstant: 354),
+            buttonLogin.heightAnchor.constraint(equalToConstant: 52),
+        ])
+        
+        
     }
     
     @objc func switchHideButton(_ sender: UIButton) {
