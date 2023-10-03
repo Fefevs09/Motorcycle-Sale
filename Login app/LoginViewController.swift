@@ -117,6 +117,8 @@ class LoginViewController: UIViewController {
         
         let titleButton = "Forget password?"
         buttonForgetPass.configuration?.title = titleButton
+        buttonForgetPass.tintColor = .black
+        buttonForgetPass.configuration?.buttonSize = .small
         
         buttonForgetPass.translatesAutoresizingMaskIntoConstraints = false
         
