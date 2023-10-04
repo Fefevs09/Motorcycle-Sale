@@ -232,10 +232,10 @@ class LoginViewController: UIViewController {
     }
     
     @objc func loginApp(_ sender: UIButton) {
-        var user = User(email: "fulano@gmail.com", password: "ciclano123")
+        let user = User(email: "fulano@gmail.com", password: "ciclano123")
         
-        var emailUser = emailTextField.text
-        var passwordUser = passTextField.text
+        let emailUser = emailTextField.text
+        let passwordUser = passTextField.text
         
         if user.email != emailUser && user.password != passwordUser {
             alertIncorrectEP()
