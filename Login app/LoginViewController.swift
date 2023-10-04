@@ -215,11 +215,11 @@ class LoginViewController: UIViewController {
     @objc func switchHideButton(_ sender: UIButton) {
         passTextField.isSecureTextEntry.toggle()
         if passTextField.isSecureTextEntry {
-            if let image = UIImage(systemName: "eye.fill") {
+            if let image = UIImage(systemName: "eye") {
                 sender.setImage(image, for: .normal)
             }
         } else {
-            if let image = UIImage(systemName: "eye.slash.fill") {
+            if let image = UIImage(systemName: "eye.slash") {
                 sender.setImage(image, for: .normal)
             }
         }
