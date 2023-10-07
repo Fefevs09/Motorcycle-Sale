@@ -71,6 +71,7 @@ class SingInCompletedView: UIViewController {
         setupPainelImage()
         
         setupTexts()
+        setupButton()
     }
     
     private func setupUI() {
@@ -106,5 +107,18 @@ class SingInCompletedView: UIViewController {
             subTitlePainel.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -50),
         ])
         
+    }
+    
+    private func setupButton() {
+        
+        view.addSubview(buttonFinished)
+        
+        NSLayoutConstraint.activate([
+//            buttonFinished.topAnchor.constraint(equalTo: subTitlePainel.bottomAnchor),
+            buttonFinished.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            buttonFinished.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -50),
+            buttonFinished.widthAnchor.constraint(equalToConstant: 354),
+            buttonFinished.heightAnchor.constraint(equalToConstant: 52),
+        ])
     }
 }
