@@ -17,6 +17,7 @@
 		1105CC6C2AC5E3EF00E5149F /* Login_appUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1105CC6B2AC5E3EF00E5149F /* Login_appUITestsLaunchTests.swift */; };
 		1105CC792AC5EA6E00E5149F /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1105CC782AC5EA6E00E5149F /* LoginViewController.swift */; };
 		110FDD042AC8706A002D7160 /* SingInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 110FDD032AC8706A002D7160 /* SingInViewController.swift */; };
+		1175912D2AD1C9170077ED85 /* SingInCompletedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1175912C2AD1C9170077ED85 /* SingInCompletedView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		1105CC6B2AC5E3EF00E5149F /* Login_appUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login_appUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		1105CC782AC5EA6E00E5149F /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		110FDD032AC8706A002D7160 /* SingInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingInViewController.swift; sourceTree = "<group>"; };
+		1175912C2AD1C9170077ED85 /* SingInCompletedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingInCompletedView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +111,7 @@
 				1105CC562AC5E3EF00E5149F /* Info.plist */,
 				1105CC782AC5EA6E00E5149F /* LoginViewController.swift */,
 				110FDD032AC8706A002D7160 /* SingInViewController.swift */,
+				1175912C2AD1C9170077ED85 /* SingInCompletedView.swift */,
 			);
 			path = "Login app";
 			sourceTree = "<group>";
@@ -264,6 +267,7 @@
 				110FDD042AC8706A002D7160 /* SingInViewController.swift in Sources */,
 				1105CC4D2AC5E3EE00E5149F /* ViewController.swift in Sources */,
 				1105CC492AC5E3EE00E5149F /* AppDelegate.swift in Sources */,
+				1175912D2AD1C9170077ED85 /* SingInCompletedView.swift in Sources */,
 				1105CC4B2AC5E3EE00E5149F /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
