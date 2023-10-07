@@ -50,7 +50,44 @@ class SingInCompletedView: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        setupUI()
+        setupPainelImage()
+        
+        setupTexts()
+    }
+    
+    private func setupUI() {
+        view.backgroundColor = .white
+    }
+    
+    private func setupPainelImage() {
+        view.addSubview(painelImageView)
+        
+        NSLayoutConstraint.activate([
+            painelImageView.topAnchor.constraint(equalTo: view.topAnchor, constant: 130),
+            painelImageView.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 20),
+            painelImageView.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -20),
+            painelImageView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+        ])
     }
 
+    private func setupTexts() {
+        
+        view.addSubview(titlePainel)
+        view.addSubview(subTitlePainel)
+        
+        
+        NSLayoutConstraint.activate([
+            titlePainel.topAnchor.constraint(equalTo: painelImageView.bottomAnchor, constant: 50),
+            titlePainel.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 50),
+            titlePainel.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -50),
+            
+            
+            
+            subTitlePainel.topAnchor.constraint(equalTo: titlePainel.bottomAnchor, constant: 20),
+            subTitlePainel.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 50),
+            subTitlePainel.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -50),
+        ])
+        
+    }
 }
