@@ -47,6 +47,23 @@ class SingInCompletedView: UIViewController {
         stp.translatesAutoresizingMaskIntoConstraints = false
         return stp
     }()
+    
+    private let buttonFinished: UIButton = {
+        let bf = UIButton()
+        
+        bf.configuration = .filled()
+        bf.setTitleColor(.white, for: .normal)
+        bf.configuration?.cornerStyle = .medium
+        //button.layer.cornerRadius = Constants.CornerRadius.buttonWithTen
+        bf.setTitle("Register", for: .normal)
+        
+        bf.layer.borderColor = UIColor.main.cgColor
+        bf.layer.cornerRadius = 10
+        bf.translatesAutoresizingMaskIntoConstraints = false
+        //button.configuration?.baseBackgroundColor = .main
+        //button.configuration?.title = "Login"
+        return bf
+    }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
