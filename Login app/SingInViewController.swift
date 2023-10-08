@@ -279,4 +279,9 @@ class SingInViewController: UIViewController {
         let nextScreen = LoginViewController()
         navigationController?.pushViewController(nextScreen, animated: true)
     }
+    
+    @objc func registerCompleted(_ sender: UIButton) {
+        let nextScreen = SingInCompletedView()
+        navigationController?.pushViewController(nextScreen, animated: true)
+    }
 }
