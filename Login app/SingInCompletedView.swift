@@ -76,6 +76,7 @@ class SingInCompletedView: UIViewController {
     
     private func setupUI() {
         view.backgroundColor = .white
+        navigationItem.hidesBackButton = true
     }
     
     private func setupPainelImage() {
