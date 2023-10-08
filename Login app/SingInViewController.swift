@@ -238,7 +238,7 @@ class SingInViewController: UIViewController {
     
     private func setupRegisterButton() {
         
-//        buttonLogin.addTarget(self, action: #selector(goToLoginScreen), for: .touchUpInside)
+        registerButton.addTarget(self, action: #selector(registerCompleted), for: .touchUpInside)
         
         view.addSubview(registerButton)
         
