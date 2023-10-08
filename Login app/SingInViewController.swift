@@ -113,7 +113,7 @@ class SingInViewController: UIViewController {
         self.setupImage()
         self.setupFieldsTexts()
         self.setupRegisterButton()
-        self.setupRegisterNow()
+        self.setupLoginNow()
     }
 
     private func setupUI() {
@@ -251,7 +251,7 @@ class SingInViewController: UIViewController {
         ])
     }
     
-    func setupRegisterNow() {
+    func setupLoginNow() {
         
         textHaveAccount.translatesAutoresizingMaskIntoConstraints = false
         
