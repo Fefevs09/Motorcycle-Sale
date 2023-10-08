@@ -55,7 +55,7 @@ class SingInCompletedView: UIViewController {
         bf.setTitleColor(.white, for: .normal)
         bf.configuration?.cornerStyle = .medium
         //button.layer.cornerRadius = Constants.CornerRadius.buttonWithTen
-        bf.setTitle("Register", for: .normal)
+        bf.setTitle("Register completed", for: .normal)
         
         bf.layer.borderColor = UIColor.main.cgColor
         bf.layer.cornerRadius = 10
